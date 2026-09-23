@@ -7,189 +7,310 @@
 <meta name="description" content="Enter to win a complimentary marketing audit and report from Big Red Oak at OCNI CNL Industry Day.">
 <style>
 :root{
-  --sage:#4E7A5C;--red:#A53A2B;--sand:#DBC7AF;--brown:#3B342F;
-  --taupe:#987663;--cream:#F5EFE5;--paper:#FBF7EF;--line:#D9D0C2;
+  --sage:#4E7A5C;
+  --red:#A53A2B;
+  --sand:#DBC7AF;
+  --brown:#3B342F;
+  --taupe:#987663;
+  --cream:#F5EFE5;
+  --paper:#FBF7EF;
+  --line:#D7CFC2;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--cream);color:var(--brown);
-  font-family:Avenir,"Avenir Next",Montserrat,Arial,sans-serif;line-height:1.45;
+html,body{margin:0;background:var(--brown);font-family:Avenir,"Avenir Next",Montserrat,Arial,sans-serif;color:var(--brown)}
+button,input,textarea{font:inherit}
+.desktop-stage{
+  position:relative;
+  width:min(100vw,1312px);
+  aspect-ratio:1312/1199;
+  margin:0 auto;
+  background:url("a_clean_professional_marketing_landing_page_layou.png") center top/100% 100% no-repeat;
+  overflow:hidden;
 }
-.page{min-height:100vh;background:var(--cream)}
-.hero{
-  position:relative;min-height:530px;color:#fff;overflow:visible;
+.live-card{
+  position:absolute;
+  left:61.55%;
+  top:24.35%;
+  width:35.05%;
+  height:63.25%;
+  z-index:4;
+  border-radius:1.1em;
+  background:#F7F0E4;
+  border:1px solid rgba(59,52,47,.10);
+  box-shadow:0 12px 30px rgba(35,29,24,.10);
+  padding:2.25em 2.25em 1.6em;
+  font-size:clamp(10px,1.13vw,15px);
+  overflow:hidden;
+}
+.card-kicker{
+  font-size:.72em;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  margin-bottom:.85em;
+}
+.card-rule{width:3.2em;border-top:.28em solid var(--sage);margin-bottom:1em}
+.card-title{
+  margin:0;
+  font-family:"Arial Narrow",Impact,Haettenschweiler,sans-serif;
+  font-size:3.35em;
+  line-height:.96;
+  text-transform:uppercase;
+  font-weight:800;
+  letter-spacing:-.01em;
+}
+.card-copy{
+  margin:.8em 0 1.2em;
+  font-size:1.12em;
+  line-height:1.33;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.78em 1.1em}
+.full{grid-column:1/-1}
+label{
+  display:block;
+  font-size:.82em;
+  font-weight:700;
+  margin-bottom:.32em;
+}
+.req{color:var(--red)}
+input,textarea{
+  width:100%;
+  border:1px solid #CFC6B9;
+  border-radius:.35em;
+  background:#FBF8F2;
+  padding:.72em .78em;
+  color:var(--brown);
+  outline:none;
+}
+input:focus,textarea:focus{border-color:var(--sage);box-shadow:0 0 0 2px rgba(78,122,92,.12)}
+textarea{min-height:5.5em;resize:vertical}
+.submit{
+  width:100%;
+  border:0;
+  border-radius:.35em;
+  background:var(--sage);
+  color:white;
+  padding:.9em 1em;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800;
+  cursor:pointer;
+}
+.submit:disabled{opacity:.65;cursor:wait}
+.privacy{
+  display:flex;
+  align-items:flex-start;
+  gap:.55em;
+  font-size:.71em;
+  line-height:1.35;
+  margin-top:1em;
+  color:#61574F;
+}
+.status{
+  display:none;
+  margin-top:.9em;
+  padding:.8em 1em;
+  border-radius:.4em;
+  font-size:.82em;
+}
+.status.show{display:block}
+.status.ok{background:#E7EFE9;color:#2E5E3C}
+.status.err{background:#F3E3DE;color:#7B2C22}
+
+/* Mobile version keeps the same art direction but reflows for scanning on a phone */
+.mobile-page{display:none;background:var(--cream)}
+.mobile-hero{
+  min-height:520px;
+  color:#F7F0E4;
   background:
-    linear-gradient(90deg,rgba(32,27,23,.94) 0%,rgba(32,27,23,.82) 37%,rgba(32,27,23,.18) 70%,rgba(32,27,23,.03) 100%),
-    url("a_clean_professional_marketing_landing_page_layou.png");
-  background-size:auto 1180px;background-position:68% 0;background-repeat:no-repeat;
+    linear-gradient(90deg,rgba(35,29,24,.92),rgba(35,29,24,.55)),
+    url("a_clean_professional_marketing_landing_page_layou.png") 54% 0/auto 760px no-repeat;
+  padding:22px 20px 28px;
 }
-.shell{width:min(1180px,calc(100% - 56px));margin:0 auto;position:relative}
-.topbar{display:flex;justify-content:space-between;align-items:flex-start;padding:34px 0 0;gap:30px}
-.wordmark{
-  font-family:"Arial Narrow",Impact,sans-serif;font-weight:800;letter-spacing:.02em;
-  font-size:31px;line-height:1;text-transform:uppercase;color:#F1E7D7;
+.mobile-brand{
+  font-family:"Arial Narrow",Impact,sans-serif;
+  font-size:31px;
+  font-weight:800;
+  text-transform:uppercase;
 }
-.wordmark:after{content:"";display:block;width:120px;border-bottom:8px solid #E7D8C6;margin-top:10px}
-.tagline{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#F3EADD;margin-top:5px}
-.kicker{font-size:11px;letter-spacing:.31em;text-transform:uppercase;color:#F3EADD;text-align:right}
-.hero-copy{width:58%;padding:58px 0 30px}
-h1{
-  font-family:"Arial Narrow",Impact,sans-serif;font-stretch:condensed;font-weight:800;
-  text-transform:uppercase;letter-spacing:-.02em;line-height:.91;
-  font-size:clamp(66px,7vw,102px);margin:0 0 20px;color:#F5EFE5;
+.mobile-brand:after{content:"";display:block;width:120px;border-top:7px solid #E4D5C3;margin-top:7px}
+.mobile-tag{font-size:10px;letter-spacing:.25em;text-transform:uppercase;margin-top:8px}
+.mobile-hero h1{
+  font-family:"Arial Narrow",Impact,sans-serif;
+  font-size:64px;
+  line-height:.91;
+  text-transform:uppercase;
+  margin:72px 0 18px;
 }
-.accent{width:72px;border-top:7px solid var(--sage);margin:0 0 22px}
-.lead{font-weight:700;font-size:26px;margin:0 0 10px;color:#F7F1E7}
-.hero-copy p{font-size:21px;max-width:590px;margin:0;color:#F2EBDD}
-.form-card{
-  position:absolute;right:0;top:292px;width:442px;z-index:5;
-  background:rgba(248,242,231,.98);border:1px solid rgba(59,52,47,.12);
-  border-radius:13px;box-shadow:0 14px 40px rgba(31,25,21,.14);overflow:hidden;
+.mobile-accent{width:72px;border-top:6px solid var(--sage);margin-bottom:18px}
+.mobile-hero strong{font-size:22px;display:block;margin-bottom:9px}
+.mobile-hero p{font-size:17px;line-height:1.48;margin:0}
+.mobile-form-wrap{padding:20px}
+.mobile-card{
+  background:#F7F0E4;
+  border-radius:14px;
+  padding:24px 20px;
+  margin-top:-52px;
+  position:relative;
+  box-shadow:0 12px 35px rgba(40,32,26,.18);
 }
-.form-head{padding:31px 34px 6px}
-.form-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:12px}
-.form-rule{width:40px;border-top:4px solid var(--sage);margin-bottom:13px}
-.form-title{
-  margin:0;font-family:"Arial Narrow",Impact,sans-serif;font-size:49px;
-  text-transform:uppercase;line-height:1;color:var(--brown);
+.mobile-card .card-title{font-size:48px}
+.mobile-card .card-copy{font-size:16px}
+.mobile-card .form-grid{grid-template-columns:1fr}
+.mobile-card .full{grid-column:auto}
+.mobile-card label{font-size:13px}
+.mobile-card input,.mobile-card textarea{font-size:16px}
+.mobile-benefits{padding:28px 20px 38px;display:grid;gap:18px}
+.mobile-benefit{text-align:center}
+.mobile-icon{
+  width:72px;height:72px;margin:0 auto 10px;border-radius:50%;background:var(--sage);
+  color:white;display:grid;place-items:center;font-size:30px
 }
-.form-sub{font-size:17px;line-height:1.28;margin:13px 0 0}
-.form-frame{height:600px;overflow:hidden;background:transparent}
-.form-frame iframe{
-  width:100%;height:720px;border:0;display:block;
-  margin-top:-10px;background:transparent;
+.mobile-benefit h3{
+  font-family:"Arial Narrow",Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:25px;
+  margin:0 0 7px;
 }
-.main{background:var(--cream);padding:0 0 0}
-.content{
-  width:min(1180px,calc(100% - 56px));margin:0 auto;min-height:532px;position:relative;
-  padding:22px 482px 30px 0;
-}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:0 0 25px}
-.benefit{text-align:center;padding:0 10px}
-.icon{
-  width:80px;height:80px;margin:0 auto 14px;border-radius:50%;background:var(--sage);
-  display:grid;place-items:center;color:white;
-}
-.icon svg{width:42px;height:42px;stroke:white;fill:none;stroke-width:2.7}
-.benefit h3{
-  font-family:"Arial Narrow",Impact,sans-serif;text-transform:uppercase;font-size:23px;
-  letter-spacing:.02em;line-height:1.05;margin:0 0 10px;
-}
-.benefit p{font-size:16px;line-height:1.35;margin:0 auto;max-width:205px}
-.divider{border-top:1px solid rgba(59,52,47,.45);margin:0 0 24px}
-.draw{
-  display:flex;align-items:center;gap:22px;background:#E8E8DA;border-radius:7px;
-  padding:19px 24px;margin-bottom:24px;
-}
-.draw .leaf{
-  width:60px;height:60px;display:grid;place-items:center;color:var(--sage);font-size:48px;line-height:1;
-}
-.draw strong{font-size:18px;line-height:1.35}
-.quote{text-align:center;font-family:Georgia,serif;font-style:italic;font-size:25px;line-height:1.25;margin:0}
-.quote:after{content:"";display:block;width:65px;border-top:4px solid var(--sage);margin:16px auto 0}
-.footer{background:var(--brown);color:#F3EADD;padding:26px 0 30px}
-.footer .shell{display:flex;align-items:center;justify-content:space-between;gap:30px}
-.footer-left{display:flex;align-items:center;gap:38px}
-.footer .wordmark{font-size:25px}
-.footer .wordmark:after{width:108px;border-width:6px;margin-top:7px}
-.footer-copy,.footer-right{font-size:10px;letter-spacing:.29em;text-transform:uppercase}
-.footer-right{text-align:right}
-.mobile-cta{display:none}
-@media(max-width:920px){
-  .shell,.content{width:min(100% - 28px,720px)}
-  .hero{min-height:auto;background-size:auto 900px;background-position:60% 0;padding-bottom:28px}
-  .topbar{padding-top:22px}
-  .kicker{display:none}
-  .hero-copy{width:100%;padding:45px 0 24px}
-  h1{font-size:clamp(58px,16vw,86px);max-width:560px}
-  .lead{font-size:22px}.hero-copy p{font-size:18px;max-width:520px}
-  .form-card{position:relative;top:auto;right:auto;width:100%;margin:18px auto 0}
-  .form-frame{height:740px}.form-frame iframe{height:820px;margin-top:0}
-  .content{padding:34px 0}
-  .benefits{grid-template-columns:1fr;gap:28px}
-  .benefit p{max-width:380px}
-  .draw{align-items:flex-start}
-  .footer .shell,.footer-left{flex-direction:column;align-items:flex-start}
-  .footer-right{text-align:left}
+.mobile-benefit p{margin:0;font-size:16px}
+.mobile-draw{margin:0 20px 22px;background:#E7E8DA;padding:16px;border-radius:8px;font-weight:700}
+.mobile-quote{text-align:center;font-family:Georgia,serif;font-style:italic;font-size:24px;padding:8px 20px 35px}
+.mobile-footer{background:var(--brown);color:#F5EFE5;padding:24px 20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+
+@media(max-width:760px){
+  .desktop-stage{display:none}
+  .mobile-page{display:block}
 }
 </style>
 </head>
 <body>
-<div class="page">
-<section class="hero">
-  <div class="shell">
-    <div class="topbar">
+
+<div class="desktop-stage" aria-label="Big Red Oak marketing audit landing page">
+  <form class="live-card js-entry-form">
+    <div class="card-kicker">OCNI CNL INDUSTRY DAY</div>
+    <div class="card-rule"></div>
+    <h2 class="card-title">ENTER TO WIN</h2>
+    <p class="card-copy">Fill out the form below for your chance to receive a free marketing audit and report.</p>
+
+    <div class="form-grid">
       <div>
-        <div class="wordmark">BIG RED OAK</div>
-        <div class="tagline">STRATEGY · MARKETING · GROWTH</div>
+        <label>Your name <span class="req">*</span></label>
+        <input name="name" autocomplete="name" required placeholder="First and last name">
       </div>
-      <div class="kicker">CLEAN ENERGY MARKETING & COMMUNICATIONS<br>SINCE 2007</div>
+      <div>
+        <label>Company <span class="req">*</span></label>
+        <input name="company" autocomplete="organization" required placeholder="Company name">
+      </div>
+      <div class="full">
+        <label>Work email <span class="req">*</span></label>
+        <input name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+      </div>
+      <div class="full">
+        <label>Company website</label>
+        <input name="website" type="url" placeholder="https://www.yourcompany.com">
+      </div>
+      <div class="full">
+        <label>What’s your biggest marketing challenge right now?</label>
+        <textarea name="marketing_challenge" placeholder="Share a few words..."></textarea>
+      </div>
+      <div class="full">
+        <button class="submit" type="submit">ENTER TO WIN →</button>
+        <div class="status"></div>
+        <div class="privacy">🔒 <span>Your information will only be used for this opportunity and will not be shared with third parties.</span></div>
+      </div>
     </div>
-    <div class="hero-copy">
-      <h1>HOW STRONG<br>IS YOUR MARKETING?</h1>
-      <div class="accent"></div>
-      <div class="lead">Get a complimentary marketing audit and report.</div>
-      <p>Big Red Oak is giving five nuclear suppliers an independent look at how they’re showing up, where they’re strong, and where they could be stronger.</p>
-    </div>
-
-    <aside class="form-card" id="enter">
-      <div class="form-head">
-        <div class="form-eyebrow">OCNI CNL INDUSTRY DAY</div>
-        <div class="form-rule"></div>
-        <h2 class="form-title">ENTER TO WIN</h2>
-        <p class="form-sub">Fill out the form below for your chance to receive a free marketing audit and report.</p>
-      </div>
-      <div class="form-frame">
-        <iframe title="Marketing audit entry form" src="https://forms.monday.com/forms/a765aae62869d222a94bf335328db9f5?embed=1" loading="eager"></iframe>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<main class="main">
-  <div class="content">
-    <section class="benefits">
-      <div class="benefit">
-        <div class="icon">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="12"></circle><path d="M29 29l10 10"></path></svg>
-        </div>
-        <h3>CLEAR INSIGHTS</h3>
-        <p>Understand how you’re showing up in the market.</p>
-      </div>
-      <div class="benefit">
-        <div class="icon">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 38V26h6v12M21 38V18h6v20M33 38V10h6v28"></path></svg>
-        </div>
-        <h3>ACTIONABLE<br>RECOMMENDATIONS</h3>
-        <p>Get practical ideas to strengthen your marketing.</p>
-      </div>
-      <div class="benefit">
-        <div class="icon">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="6"></circle><circle cx="12" cy="18" r="4"></circle><circle cx="36" cy="18" r="4"></circle><path d="M14 38v-8c0-6 4-10 10-10s10 4 10 10v8M4 38v-6c0-5 3-8 8-8M44 38v-6c0-5-3-8-8-8"></path></svg>
-        </div>
-        <h3>INDEPENDENT<br>PERSPECTIVE</h3>
-        <p>An outside look from a team that understands your industry.</p>
-      </div>
-    </section>
-    <div class="divider"></div>
-    <div class="draw">
-      <div class="leaf">❧</div>
-      <strong>Five companies will be randomly selected following OCNI CNL Industry Day to receive a complimentary marketing audit and report.</strong>
-    </div>
-    <div class="quote">“Complexity is the environment.<br>Clarity is the advantage.”</div>
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="shell">
-    <div class="footer-left">
-      <div class="wordmark">BIG RED OAK</div>
-      <div class="footer-copy">PEOPLE &nbsp;|&nbsp; PARTNERSHIPS &nbsp;|&nbsp; POSSIBILITIES</div>
-    </div>
-    <div class="footer-right">A STRONGER TOMORROW<br>BUILDS HERE</div>
-  </div>
-</footer>
+  </form>
 </div>
+
+<div class="mobile-page">
+  <section class="mobile-hero">
+    <div class="mobile-brand">BIG RED OAK</div>
+    <div class="mobile-tag">STRATEGY · MARKETING · GROWTH</div>
+    <h1>HOW STRONG<br>IS YOUR<br>MARKETING?</h1>
+    <div class="mobile-accent"></div>
+    <strong>Get a complimentary marketing audit and report.</strong>
+    <p>Big Red Oak is giving five nuclear suppliers an independent look at how they’re showing up, where they’re strong, and where they could be stronger.</p>
+  </section>
+
+  <div class="mobile-form-wrap">
+    <form class="mobile-card js-entry-form">
+      <div class="card-kicker">OCNI CNL INDUSTRY DAY</div>
+      <div class="card-rule"></div>
+      <h2 class="card-title">ENTER TO WIN</h2>
+      <p class="card-copy">Fill out the form below for your chance to receive a free marketing audit and report.</p>
+      <div class="form-grid">
+        <div>
+          <label>Your name <span class="req">*</span></label>
+          <input name="name" autocomplete="name" required placeholder="First and last name">
+        </div>
+        <div>
+          <label>Company <span class="req">*</span></label>
+          <input name="company" autocomplete="organization" required placeholder="Company name">
+        </div>
+        <div>
+          <label>Work email <span class="req">*</span></label>
+          <input name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+        </div>
+        <div>
+          <label>Company website</label>
+          <input name="website" type="url" placeholder="https://www.yourcompany.com">
+        </div>
+        <div>
+          <label>What’s your biggest marketing challenge right now?</label>
+          <textarea name="marketing_challenge" placeholder="Share a few words..."></textarea>
+        </div>
+        <div>
+          <button class="submit" type="submit">ENTER TO WIN →</button>
+          <div class="status"></div>
+          <div class="privacy">🔒 <span>Your information will only be used for this opportunity and will not be shared with third parties.</span></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <section class="mobile-benefits">
+    <div class="mobile-benefit"><div class="mobile-icon">⌕</div><h3>CLEAR INSIGHTS</h3><p>Understand how you’re showing up in the market.</p></div>
+    <div class="mobile-benefit"><div class="mobile-icon">▥</div><h3>ACTIONABLE RECOMMENDATIONS</h3><p>Get practical ideas to strengthen your marketing.</p></div>
+    <div class="mobile-benefit"><div class="mobile-icon">◉</div><h3>INDEPENDENT PERSPECTIVE</h3><p>An outside look from a team that understands your industry.</p></div>
+  </section>
+
+  <div class="mobile-draw">Five companies will be randomly selected following OCNI CNL Industry Day to receive a complimentary marketing audit and report.</div>
+  <div class="mobile-quote">“Complexity is the environment.<br>Clarity is the advantage.”</div>
+  <footer class="mobile-footer">BIG RED OAK · PEOPLE · PARTNERSHIPS · POSSIBILITIES</footer>
+</div>
+
+<script>
+document.querySelectorAll('.js-entry-form').forEach(form => {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = form.querySelector('.submit');
+    const status = form.querySelector('.status');
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    button.disabled = true;
+    button.textContent = 'SUBMITTING…';
+    status.className = 'status';
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) throw new Error(result.error || 'Submission failed');
+
+      form.reset();
+      status.textContent = "You’re entered. Thanks for stopping by — we’ll contact the selected companies after the event.";
+      status.className = 'status show ok';
+      button.textContent = 'ENTERED ✓';
+    } catch (error) {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'status show err';
+      button.disabled = false;
+      button.textContent = 'ENTER TO WIN →';
+    }
+  });
+});
+</script>
 </body>
 </html>
