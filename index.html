@@ -303,6 +303,7 @@ document.querySelectorAll('.js-entry-form').forEach(form => {
       status.textContent = "You’re entered. Thanks for stopping by — we’ll contact the selected companies after the event.";
       status.className = 'status show ok';
       button.textContent = 'ENTERED ✓';
+      setTimeout(() => window.location.reload(), 700);
     } catch (error) {
       status.textContent = 'Something went wrong. Please try again.';
       status.className = 'status show err';
