@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       name: String(name).trim(),
       company: String(company).trim(),
       email: String(email).trim(),
-      website: website ? String(website).trim() : '',
+      website: website ? (/^https?:\/\//i.test(String(website).trim()) ? String(website).trim() : 'https://' + String(website).trim()) : '',
       marketing_challenge: marketing_challenge ? String(marketing_challenge).trim() : ''
     };
 
