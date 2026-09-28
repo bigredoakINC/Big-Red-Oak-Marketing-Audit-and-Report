@@ -300,7 +300,7 @@ document.querySelectorAll('.js-entry-form').forEach(form => {
       if (!response.ok || !result.ok) throw new Error(result.error || 'Submission failed');
 
       form.reset();
-      status.textContent = "You’re entered. Thanks for stopping by — we’ll contact the selected companies after the event.";
+      status.textContent = "You’re entered. Thanks for stopping by — we’ll contact the selected organizations directly.";
       status.className = 'status show ok';
       button.textContent = 'ENTERED ✓';
       setTimeout(() => window.location.reload(), 700);
